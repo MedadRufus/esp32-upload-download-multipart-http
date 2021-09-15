@@ -31,7 +31,7 @@ int UDHttp::simpleUrlParser(char *url, char *host, int &port)
 {
     port = 80;
     char *host_1 = "beta.medadnewman.co.uk";
-    len = strlen(host_1);
+    uint32_t len = strlen(host_1);
     memcpy(host, host_1, len);
 }
 
