@@ -27,9 +27,12 @@ UDHttp::UDHttp(){
 UDHttp::~UDHttp(){
 }
 //simple url parser
-int UDHttp::simpleUrlParser(char *url, char *host, int &port){
+int UDHttp::simpleUrlParser(char *url, char *host, int &port)
+{
     port = 80;
-    host = "beta.medadnewman.co.uk";
+    char *host_1 = "beta.medadnewman.co.uk";
+    len = strlen(host_1);
+    memcpy(host, host_1, len);
 }
 
 void UDHttp::sendChunk(Client *client, uint8_t *buf, int len){
