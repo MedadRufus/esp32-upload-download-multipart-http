@@ -8,14 +8,15 @@
 
 #define HEADER "POST %s HTTP/1.1\r\n" \
                 "Host: %s:%d\r\n"\
-                "Connection: keep-alive\r\n"\
+                "Connection: close\r\n"\
+                "User-Agent: Arduino/1.0\r\n"\
                 "Accept: */*\r\n"\
                 "Content-Length: %d\r\n"\
                 "Expect: \r\n"\
                 "Content-Type: multipart/form-data; boundary=------------------------%s\r\n\r\n"
 #define OPEN  "--------------------------%s\r\n"\
-                "Content-Disposition: form-data; name='data'; filename='%s'\r\n"\
-                "Content-Type: application/octet-stream\r\n\r\n"
+                "Content-Disposition: form-data; name=\"file\"; filename='%s'\r\n"\
+                "Content-Type: text/csv\r\n\r\n"
 #define CLOSE   "\r\n--------------------------%s--\r\n"
 
 #define GETR  "GET %s HTTP/1.1\r\nHost: %s:%d\r\nAccept: */*\r\n\r\n"
